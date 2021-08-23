@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/makesetup/', async (req, res) => {
-    res.send("hi")
+
 })
 
 app.listen(3000, () => {
