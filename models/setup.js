@@ -17,4 +17,7 @@ const setupSchema = new Schema({
     }
 })
 
-module.exports = mongoose.model('Setup', setupSchema)
+const Setup = mongoose.model('Setup', setupSchema)
+
+module.exports = Setup;
+

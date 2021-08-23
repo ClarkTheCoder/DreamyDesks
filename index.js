@@ -25,9 +25,7 @@ app.get('/', (req, res) => {
 })
 
 app.get('/makesetup/', async (req, res) => {
-    const setup = new Setup({title: "Mac Setup"});
-    await setup.save();
-    res.send(setup)
+    res.send("hi")
 })
 
 app.listen(3000, () => {
