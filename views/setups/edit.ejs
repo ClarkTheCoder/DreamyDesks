@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit your Setup!</title>
+</head>
+<body>
+    <h1>Edit your Setup</h1>
+    <form action="/setups/<%= setup._id %>?_method=PUT" method="POST">
+        <label for="setup-title">Title:</label>
+        <input type="text" id="setup-title" value="<%= setup.title %>" name="setup[title]" placeholder="Title name...">
+        <label for="setup-description">Description:</label>
+        <input type="text" id="setup-description" value="<%= setup.description %>" name="setup[description]" placeholder="Tell us more about your setup...">
+        <label for="setup-tags">Tags:</label>
+        <input type="text" id="setup-tags" value="<%= setup.category %>" name="setup[category]" placeholder="'work', 'apple', 'gaming', 'leisure'">
+        <button>Share Setup!</button>
+    </form>
+
+    <a href="/setups">Back</a>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setup Details</title>
+</head>
+<body>
+    <h1><%= setup.title %> </h1>
+    <p><%= setup.description %></p>
+    <p><%= setup.category %> </p>
+    <p><%= setup.publishedDate %> </p>
+
+    <form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    
+    <footer>
+        <a href="/setups">Back</a>
+        <a href="/setups/<%= setup._id %>/edit ">Edit</a>
+    </footer>
+</body>
+</html>
