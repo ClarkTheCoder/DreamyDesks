@@ -2,18 +2,23 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const setupSchema = new Schema({
-    title: String, 
+    title: {
+        type: String,
+        required: true
+    },
 
     publishedDate: { 
         type : Date, 
         default: Date.now
     },
 
-    description: String, 
-
-    catagory: {
+    description: {
         type: String,
-        enum: ['work', 'gaming', 'leisure', 'apple', 'programming']
+        required: true
+    },
+
+    category: {
+        type: String,
     }
 })
 
