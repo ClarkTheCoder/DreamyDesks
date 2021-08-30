@@ -19,6 +19,11 @@ const setupSchema = new Schema({
 
     category: {
         type: String,
+    },
+
+    image: {
+        type: String,
+        required: true
     }
 })
 
