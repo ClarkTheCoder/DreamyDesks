@@ -3,8 +3,15 @@
 <header>       
     <a href="/setups/new">Post yours!</a>
 </header>
-<ul>
-    <% for(let setup of setups) { %> 
-        <li><a href="/setups/<%= setup._id %>"> <%= setup.title %></a></li>
-    <% } %> 
-</ul>
+<div class="row">
+    <div class="col-6 offset-3">
+        <ul>
+            <% for(let setup of setups) { %> 
+                <li><a href="/setups/<%= setup._id %>"> <%= setup.title %></a></li>
+            <% } %> 
+        </ul>
+    </div>
+    <!-- <div class="col-3">
+        hi
+    </div> -->
+</div>

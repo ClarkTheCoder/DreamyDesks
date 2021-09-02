@@ -1,14 +1,26 @@
 <% layout('layouts/boilerplate') %> 
-<form action="/setups" method="POST">
-    <label for="setup-title">Title:</label>
-    <input type="text" id="setup-title" name="setup[title]" placeholder="Title name...">
-    <label for="setup-description">Description:</label>
-    <input type="text" id="setup-description" name="setup[description]" placeholder="Tell us more about your setup...">
-    <label for="setup-tags">Tags:</label>
-    <input type="text" id="setup-tags" name="setup[category]" placeholder="'work', 'apple', 'gaming', 'leisure'">
-    <label for="setup-image">Tags:</label>
-    <input type="text" id="setup-image" name="setup[image]" placeholder="Image link here..">
-    <button>Share Setup!</button>
-</form>
-
-<a href="/setups">back</a>
+<div class="row">
+    <h1 class="text-center">New Campground</h1>
+    <div class="col-6 offset-3">
+        <form action="/setups" method="POST">
+            <div class="form-input mb-2">
+                <label for="setup-title" class="form-label">Title:</label>
+                <input type="text" class="form-control" id="setup-title" name="setup[title]" placeholder="Title name...">
+            </div>
+            <div class="form-input mb-2">
+                <label for="setup-description" class="form-label">Description:</label>
+                <input type="text" class="form-control" id="setup-description" name="setup[description]" placeholder="Tell us more about your setup...">
+            </div>
+            <div class="form-input mb-2">
+                <label for="setup-tags" class="form-label">Tags:</label>
+                <input type="text" class="form-control" id="setup-tags" name="setup[category]" placeholder="'work', 'apple', 'gaming', 'leisure'">
+            </div>
+            <div class="form-input mb-2">
+                <label for="setup-image" class="form-label">Image:</label>
+                <input type="text" class="form-control" id="setup-image" name="setup[image]" placeholder="Image link here..">
+            </div>
+            <button class="btn btn-success">Share Setup!</button>
+            <a href="/setups" class="btn btn-primary">back</a>
+        </form>
+    </div>
+</div>
