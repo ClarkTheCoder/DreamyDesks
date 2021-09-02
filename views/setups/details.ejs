@@ -1,15 +1,15 @@
 <% layout('layouts/boilerplate') %> 
-    <h1><%= setup.title %> </h1>
-    <img src="<%= setup.image %> " alt="my setup">
-    <p><%= setup.description %></p>
-    <p><%= setup.category %> </p>
-    <p><%= setup.publishedDate %> </p>
+<h1><%= setup.title %> </h1>
+<img src="<%= setup.image %> " alt="my setup">
+<p><%= setup.description %></p>
+<p><%= setup.category %> </p>
+<p><%= setup.publishedDate %> </p>
 
-    <form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
-        <button>Delete</button>
-    </form>
-    
-    <footer>
-        <a href="/setups">Back</a>
-        <a href="/setups/<%= setup._id %>/edit ">Edit</a>
-    </footer>
+<form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
+    <button>Delete</button>
+</form>
+
+<footer>
+    <a href="/setups">Back</a>
+    <a href="/setups/<%= setup._id %>/edit ">Edit</a>
+</footer>
