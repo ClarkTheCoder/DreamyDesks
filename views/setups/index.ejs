@@ -10,7 +10,7 @@
                     <div class="card-body">
                     <h5 class="card-title"><%= setup.title %></h5>
                     <p class="card-text"><%= setup.description %></p>
-                    <p class="card-text tags"><%= setup.category %></p>
+                    <h6 class="card-subtitle mb-2 text-muted tags"><%= setup.category %> </h6>
                     <a href="/setups/<%= setup._id %> " class="btn btn-primary">show</a>
                     </div>
                 </div>
@@ -19,9 +19,9 @@
     <div class="col-3 mt-4">
         <div class="card">
             <div class="card-body">
-            <h5 class="card-title">Hello</h5>
-            <p class="card-text">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.</p>
-            <a href="" class="btn btn-primary">show</a>
+            <h5 class="card-title">Welcome</h5>
+            <p class="card-text">Sign up and post your gaming setups, office spaces and anything in between.</p>
+            <a href="/setups/new" class="btn btn-primary ">Post your setup!</a>
             </div>
         </div>
     </div>

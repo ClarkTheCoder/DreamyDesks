@@ -1,15 +1,21 @@
 <% layout('layouts/boilerplate') %> 
-<h1><%= setup.title %> </h1>
-<img src="<%= setup.image %>" height="400" width="600" alt="my setup">
-<p><%= setup.description %></p>
-<p><%= setup.category %> </p>
-<p><%= setup.publishedDate %> </p>
 
-<form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
-    <button>Delete</button>
-</form>
+<div class="row">
+    <div class="col-10 offset-1 mt-4 mb-4">
+        <div class="card">
+            <img src="<%= setup.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= setup.title %> </h5>
+              <p class="card-text"><%= setup.description %></p>
+              <p class="card-text tags"><%= setup.category %></p>
+              <p class="card-text"><small class="text-muted">Posted     <%= setup.publishedDate %></small></p>
+              <form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
+                <a href="/setups" class="btn btn-primary">All Setups</a>
+                <a href="/setups/<%= setup._id %>/edit " class="btn btn-primary">Edit</a>
+                <button class="btn btn-danger">Delete</button>
+            </form>
+            </div>
+          </div>
+    </div>
+</div>
 
-<footer>
-    <a href="/setups">Back</a>
-    <a href="/setups/<%= setup._id %>/edit ">Edit</a>
-</footer>
