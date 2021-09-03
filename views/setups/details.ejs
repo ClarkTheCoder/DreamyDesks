@@ -8,7 +8,7 @@
               <h5 class="card-title"><%= setup.title %> </h5>
               <p class="card-text"><%= setup.description %></p>
               <p class="card-text tags"><%= setup.category %></p>
-              <p class="card-text"><small class="text-muted">Posted     <%= setup.publishedDate %></small></p>
+              <p class="card-text"><small class="text-muted">Posted <%= setup.publishedDate %></small></p>
               <form action="/setups/<%= setup._id %>?_method=DELETE" method="POST">
                 <a href="/setups" class="btn btn-primary">All Setups</a>
                 <a href="/setups/<%= setup._id %>/edit " class="btn btn-primary">Edit</a>
