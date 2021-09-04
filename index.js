@@ -1,9 +1,10 @@
 const express = require('express');
 const path = require('path')
 const mongoose  = require('mongoose');
-const Setup = require('./models/setup')
+const catchAsync = require('./utils/catchAsync');
+const Setup = require('./models/setup');
 const ejsMate = require('ejs-mate');
-const methodOverride = require('method-override')
+const methodOverride = require('method-override');
 
 // connect to DB
 mongoose.connect('mongodb://localhost:27017/dreamy-desks', {
@@ -37,10 +38,10 @@ app.get('/', (req, res) => {
 })
 
 // display all setups
-app.get('/setups', async (req, res) => {
+app.get('/setups', catchAsync(async (req, res) => {
     const setups = await Setup.find({});
     res.render('setups/index', { setups });
-})
+}))
 
 // form for creating new setup post
 app.get('/setups/new', (req, res) => {
@@ -48,36 +49,40 @@ app.get('/setups/new', (req, res) => {
 })
 
 // route to process new setup request
-app.post('/setups', async (req, res) => {
+app.post('/setups', catchAsync(async (req, res) => {
     const setup = new Setup(req.body.setup);
     await setup.save();
     res.redirect(`/setups/${setup._id}`);
-})
+}))
 
 // details page for setup 
-app.get('/setups/:id', async (req, res) => {
+app.get('/setups/:id', catchAsync(async (req, res) => {
     const setup = await Setup.findById(req.params.id);
     res.render('setups/details', { setup });
-})
+}))
 
 // form to update setup
-app.get('/setups/:id/edit', async (req, res) => {
+app.get('/setups/:id/edit', catchAsync(async (req, res) => {
     const setup = await Setup.findById(req.params.id);
     res.render('setups/edit', { setup });
-})
+}))
 
 // route that processes updates
-app.put('/setups/:id', async (req, res) => {
+app.put('/setups/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const setup = await Setup.findByIdAndUpdate(id, {...req.body.setup});
     res.redirect(`/setups/${setup._id}`);
-})
+}))
 
 // delete setup 
-app.delete('/setups/:id', async (req, res) => {
+app.delete('/setups/:id', catchAsync(async (req, res) => {
     const { id } = req.params;
     const setup = await Setup.findByIdAndDelete(id);
-    res.redirect('/setups')
+    res.redirect('/setups');
+}))
+
+app.use((err, req, res, next) => {
+    res.send("Something went wrong");
 })
 
 app.listen(3000, () => {

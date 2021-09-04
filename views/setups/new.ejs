@@ -2,14 +2,21 @@
 <div class="row">
     <h1 class="text-center mt-4">Post your Setup!</h1>
     <div class="col-6 offset-3">
-        <form action="/setups" method="POST" novalidate class="validated-form">
+        <form action="/setups" method="POST" novalidate class="validated-form mb-4">
             <div class="form-input mb-2">
                 <label for="setup-title" class="form-label">Title:</label>
                 <input type="text" class="form-control" id="setup-title" name="setup[title]" placeholder="Title name..." required>
+                <div class="valid-feedback">
+                    Looking good!
+                </div>
             </div>
             <div class="form-input mb-2">
                 <label for="setup-description" class="form-label">Description:</label>
-                <input type="text" class="form-control" id="setup-description" name="setup[description]" placeholder="Tell us more about your setup..." required>
+                <textarea class="form-control" id="setup-description" name="setup[description]" rows=8 placeholder="Tell us more about your setup..."></textarea>
+                <!-- <input type="text" class="form-control" id="setup-description" name="setup[description]" placeholder="Tell us more about your setup..." required> -->
+                <div class="valid-feedback">
+                    Looking good!
+                </div>
             </div>
             <div class="form-input mb-2">
                 <label for="setup-tags" class="form-label">Tags:</label>
@@ -18,30 +25,12 @@
             <div class="form-input mb-2">
                 <label for="setup-image" class="form-label">Image:</label>
                 <input type="text" class="form-control" id="setup-image" name="setup[image]" placeholder="Image link here.." required>
+                <div class="valid-feedback">
+                    Looking good!
+                </div>
             </div>
             <button class="btn btn-success">Share Setup!</button>
             <a href="/setups" class="btn btn-primary">back</a>
         </form>
     </div>
 </div>
-
-
-<script>
-    (function () {
-    'use strict'
-
-    var forms = document.querySelectorAll('.validated-form')
-
-    Array.prototype.slice.call(forms)
-        .forEach(function (form) {
-        form.addEventListener('submit', function (event) {
-            if (!form.checkValidity()) {
-            event.preventDefault()
-            event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-        }, false)
-        })
-    })()
-</script>
